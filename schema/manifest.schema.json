@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PQEVM Vector Pack Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "pack_name",
+    "scheme",
+    "version",
+    "created_utc",
+    "vectors_file",
+    "vector_count",
+    "security_equiv_bits",
+    "vectors_sha256",
+    "pack_id"
+  ],
+  "properties": {
+    "pack_name": { "type": "string", "minLength": 1 },
+    "scheme": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "created_utc": { "type": "string", "minLength": 1 },
+
+    "vectors_file": { "type": "string", "minLength": 1 },
+    "vector_count": { "type": "integer", "minimum": 0 },
+
+    "security_equiv_bits": { "type": "integer", "minimum": 1 },
+    "surfaces": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["S0", "S1", "S2", "S3"] }
+    },
+    "chain_profiles": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "vectors_sha256": { "type": "string", "minLength": 64, "maxLength": 64 },
+    "pack_id": { "type": "string", "minLength": 64, "maxLength": 64 },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "generator": { "type": "string" },
+        "source_repo": { "type": "string" },
+        "source_commit": { "type": "string" }
+      }
+    },
+
+    "description": { "type": "string" }
+  }
+}

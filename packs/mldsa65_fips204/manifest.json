@@ -1,0 +1,23 @@
+{
+  "chain_profiles": [
+    "evm-l1-default"
+  ],
+  "created_utc": "2026-01-03T00:00:00Z",
+  "description": "Bootstrap pack (empty) to lock schema + hashing workflow.",
+  "pack_id": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pack_name": "mldsa65_fips204_smoke",
+  "provenance": {
+    "generator": "manual/bootstrap",
+    "source_commit": "",
+    "source_repo": "ml-dsa-65-ethereum-verification"
+  },
+  "scheme": "ML-DSA-65",
+  "security_equiv_bits": 192,
+  "surfaces": [
+    "S0"
+  ],
+  "vector_count": 0,
+  "vectors_file": "vectors.jsonl",
+  "vectors_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "version": "0.0.1"
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PQEVM Vector",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "scheme",
+    "surface",
+    "chain_profile",
+    "security_equiv_bits",
+    "expected"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "scheme": { "type": "string", "minLength": 1 },
+    "surface": {
+      "type": "string",
+      "enum": ["S0", "S1", "S2", "S3"]
+    },
+    "chain_profile": { "type": "string", "minLength": 1 },
+    "security_equiv_bits": { "type": "integer", "minimum": 1 },
+
+    "pk_hex": { "type": "string" },
+    "sig_hex": { "type": "string" },
+    "msg_hex": { "type": "string" },
+    "msg_hash_hex": { "type": "string" },
+
+    "calldata_hex": { "type": "string" },
+
+    "expected": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "minLength": 1 },
+        "return_magic_hex": { "type": "string" }
+      }
+    },
+
+    "notes": { "type": "string" }
+  }
+}
